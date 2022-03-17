@@ -35,6 +35,13 @@ class PlatformProvider extends OrchidServiceProvider
                 ->badge(function () {
                     return 6;
                 }),
+           Menu::make('Email screen')
+                ->icon('fa.envelope-solid')
+                ->route('platform.email')
+               // ->title('Quickstart email')
+                ->badge(function () {
+                    return 2;
+                }),
 
             Menu::make('Dropdown menu')
                 ->icon('code')
