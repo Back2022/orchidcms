@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Orchid seminar - CMS u laravelu</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -50,12 +50,18 @@
                         <div class="p-6">
                             <div class="flex items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://github.com/Back2022/orchidcms" class="underline text-gray-900 dark:text-white">Dokumentacija</a></div>
                             </div>
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                                    <ul>
+                                        <li><a href="https://github.com/Back2022/orchidcms">Github repo ovog CMS-a</a> </li>  
+                                     <li><a href="http://18.212.32.81:8888/todo.php">Production ovog CMS-a</a> </li> 
+                                     <li><a href="https://18.212.32.81:10000/">Webmin ovog CMS-a</a> </li>
+                                    
+                                    </ul>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -68,7 +74,27 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+              
+                                    Zadatak je napraviti jednostavan CMS (Content Management System). Tehnologije koje ćete koristiti za izradu aplikacije su PHP i MySQL. Potrebno je koristiti MVC obrazac softverske arhitekture. Za bi bilo poželjno koristiti Laravel radni okvir, ali nije nužno.
+Potrebno je kreirati funkcionalno CMS rješenje I kreirani kod postaviti na GitHub.
+Navedena aplikacija bi trebala:
+<ol>
+<li>Dizajnirati i kreirati bazu podataka korištenjem MySQL baze podataka.
+    Za dizajniranje možete koristiti aplikaciju MySQL Workbench, ali možete i po 
+    vlastitoj želji odabrati aplikaciju. Ako koristite Laravel radni okvir 
+    potrebno je koristiti migracije za kreiranje baze podataka.</li>
+<li>Sustav za autorizaciju i autentifikaciju korisnika (vidi sliku 1.).</li>
+<li>Sustav za upravljanje korisnica CMS-a. Kroz sustav se treba moći kreirati, vidjeti, 
+urediti i izbrisati korisnike CMS sustava. (vidi sliku 2.).</li>
+<li>Sustava za upravljanje ulogama korisnika CMS-a. Kroz sustav 
+se treba moći kreirati, vidjeti, urediti i izbrisati pojedina uloga. (vidi sliku 3.)</li>
+<li>Sustav za upravljanje stranicama. Kroz sustav se treba moći kreirati, 
+vidjeti, urediti i izbrisati svaku stranicu. U svakoj stranici potrebna je 
+mogućnost unosa tekstualnog sadržaja i upload fotografije.</li>
+<li>Sustav za upravljanje navigacijom. Kroz sustav se treba moći kreirati, 
+vidjeti, urediti i izbrisati svaki element izbornika. Svaki element 
+izbornika treba biti povezan s minimalno jednom stranicom iz sustava.</li>
+                                </ol>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +107,9 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                                    
+                                    <img src="/storage/slika2.PNG">
+                                    <img src="/storage/role.PNG">
                                 </div>
                             </div>
                         </div>

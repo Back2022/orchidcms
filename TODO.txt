@@ -1,4 +1,8 @@
-1. EC2 postavi vhost
+1. EC2 postavi vhost 
+  - port 8899 na ec2 otvoren
+  - repo sa git kloniran na /var/www/orkidcms
+  - vhost apache2 postavljen, apache retartiran
+  - stranice se ne pojavljuju na http://18.212.32.81:8899/ 
 2. postavi ftp za upload
 3. generiraj nekoliko dummy stranica po zahtjevima seminara
   - user
