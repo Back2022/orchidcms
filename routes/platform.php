@@ -17,6 +17,7 @@ use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
+use App\Orchid\Screens\EmailSenderScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ use Tabuna\Breadcrumbs\Trail;
 | contains the need "dashboard" middleware group. Now create something great!
 |
 */
+
+//Quickstart primjer: https://orchid.software/en/docs/quickstart/
+// http://localhost:8000/admin/email
+Route::screen('email', EmailSenderScreen::class)->name('platform.email');
 
 // Main
 Route::screen('/main', PlatformScreen::class)
