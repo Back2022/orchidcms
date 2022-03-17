@@ -1,0 +1,11 @@
+1. EC2 postavi vhost
+2. postavi ftp za upload
+3. generiraj nekoliko dummy stranica po zahtjevima seminara
+  - user
+  - roles
+  - pages
+  - navigacija
+4. database shema seminara
+5. migracije i modeli
+ A sve to uz pomoć Ochida :)
+
