@@ -91,8 +91,14 @@ class EmailSenderScreen extends Screen
                 ->required()
                 ->placeholder('Insert text here ...')
                 ->help('Add the content for the message that you would like to send.')
+                ,
+            Button::make('Send Message from below')
+               // ->confirm()
+                ->set('title', 'commandBar():title') // ovako dodajemo old-style html atribute
+                ->icon('paper-plane')
+                ->method('messageFromBellow'),   
 
-        ])
+        ]) 
     ];
     }
     
@@ -120,5 +126,12 @@ class EmailSenderScreen extends Screen
 
 
         Alert::info('Your email message has been sent successfully.');
+    }
+    
+    
+        public function messageFromBellow()
+    {
+       
+        Alert::info('Hello from below the form!');
     }
 }
