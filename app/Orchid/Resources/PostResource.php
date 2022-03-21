@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Orchid\Crud\Resource;
 use Orchid\Screen\TD;
 use Orchid\Screen\Fields\Input;
+use Illuminate\Validation\Rule;
 
 class PostResource extends Resource
 {
@@ -14,7 +15,7 @@ class PostResource extends Resource
      *
      * @var string
      */
-    public static $model = '';
+    public static $model = \App\Models\Post::class;
 
     /**
      * Get the fields displayed by the resource.
@@ -97,9 +98,7 @@ public function onDelete(Model $model)
      */
     public function filters(): array
     {
-            return [
-        new DefaultSorted('id', 'desc'),
-    ];
+            return [];
     }
     public function rules(Model $model): array
 {
