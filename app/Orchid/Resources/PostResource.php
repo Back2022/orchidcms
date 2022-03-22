@@ -7,6 +7,7 @@ use Orchid\Crud\Resource;
 use Orchid\Screen\TD;
 use Orchid\Screen\Fields\Input;
 use Illuminate\Validation\Rule;
+use Orchid\Screen\Sight;
 
 class PostResource extends Resource
 {
@@ -19,6 +20,7 @@ class PostResource extends Resource
 
     /**
      * Get the fields displayed by the resource.
+     * Ovo su polja koja se pojavljuju u create formi
      *
      * @return array
      */
@@ -33,6 +35,7 @@ class PostResource extends Resource
 
     /**
      * Get the columns displayed by the resource.
+     * Polja koja se pojavljuju u index tablici
      *
      * @return TD[]
      */
@@ -40,7 +43,9 @@ class PostResource extends Resource
     {
         return [
             TD::make('id'),
-            TD::make('title'),
+            TD::make('title')
+                ->sort()
+                ->filter(TD::FILTER_TEXT),
 
             TD::make('created_at', 'Date of creation')
                 ->render(function ($model) {
@@ -80,6 +85,7 @@ public function onDelete(Model $model)
     
     /**
      * Get the sights displayed by the resource.
+     * Polja koja se pojavljuju u SHOW view-u
      *
      * @return Sight[]
      */

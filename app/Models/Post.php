@@ -14,4 +14,24 @@ class Post extends Model
     use AsSource, Filterable, Attachable;
     
     protected $fillable=['title'];
+    
+        /**
+     * Name of columns to which http sorting can be applied
+     *
+     * @var array
+     */
+    protected $allowedSorts = [
+        'title',
+        'created_at',
+        'updated_at'
+    ];
+    
+    /**
+ * Name of columns to which http filter can be applied
+ *
+ * @var array
+ */
+protected $allowedFilters = [
+    'title',
+];
 }

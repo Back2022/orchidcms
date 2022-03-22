@@ -73,7 +73,7 @@ class ExampleCardsScreen extends Screen
                 }),
                 Sight::make('Action')->render(function () {
                     return Button::make('Show toast')
-                        ->type(Color::DEFAULT())
+                        ->type(Color::INFO())//DEFAULT())
                         ->method('showToast');
                 }),
             ])->title('User'),
