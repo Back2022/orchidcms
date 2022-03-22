@@ -8,30 +8,22 @@ use Orchid\Attachment\Attachable;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
 
-class Post extends Model
+class Category extends Model
 {
     use HasFactory;
     use AsSource, Filterable, Attachable;
     
-    protected $fillable=['title', 'category_id', 'created_at','updated_at'];
-    
-        /**
-     * Name of columns to which http sorting can be applied
+    protected $fillable=['type',  'created_at','updated_at'];
+     
+    /**
+     * The attributes for which can use sort in url.
      *
      * @var array
      */
     protected $allowedSorts = [
-        'title',
+        'id',
+        'type',
+        'updated_at',
         'created_at',
-        'updated_at'
     ];
-    
-    /**
- * Name of columns to which http filter can be applied
- *
- * @var array
- */
-protected $allowedFilters = [
-    'title',
-];
 }
