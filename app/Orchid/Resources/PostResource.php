@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Orchid\Crud\Resource;
 use Orchid\Screen\TD;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Select;
 use Illuminate\Validation\Rule;
 use Orchid\Screen\Sight;
+use App\Models\Category;
+use Orchid\Screen\Fields\Quill;
 
 class PostResource extends Resource
 {
@@ -30,6 +33,23 @@ class PostResource extends Resource
         Input::make('title')
             ->title('Title')
             ->placeholder('Enter title here'),
+        
+           
+            Select::make('category_id')
+                ->fromModel(Category::class, 'type')
+                //->multiple()
+                ->title(__('kategoija posta'))
+                ->help('Odaberi kategoriju posta'),
+        
+         Quill::make('body')
+                ->title('Body')
+                ->required()
+                ->placeholder('Insert text here ...')
+                ->help('Add the content for the message that you would like to send.')
+                ,
+      //  Input::make('category_id')
+       //     ->title('Kategorija')
+       //     ->placeholder('Unesi filtriranu kategoriju'),  //TODO napravi category filter
     ];
     }
 
@@ -46,17 +66,26 @@ class PostResource extends Resource
             TD::make('title')
                 ->sort()
                 ->filter(TD::FILTER_TEXT),
-
+            
+            //TD::make('category_id')   //ovo mi sam o vraća FK što mi nije dovoljno
+            TD::make('category_id', 'Rubrika')
+            ->sort()
+                ->render(function ($model) {
+                    return $model->category()->get()->first()->type;
+                }),
+                        
             TD::make('created_at', 'Date of creation')
+            ->sort()
                 ->render(function ($model) {
                     return $model->created_at->toDateTimeString();
                 }),
+                        
 
             TD::make('updated_at', 'Update date')
                 ->render(function ($model) {
                     return $model->updated_at->toDateTimeString();
-                }),
-        ];
+                })
+       ];
     }
 
     /**
@@ -94,6 +123,16 @@ public function onDelete(Model $model)
            return [
         Sight::make('id'),
         Sight::make('title'),
+        Sight::make('body')    // što će se dogoditi s HTML chars??
+               ->render(function ($model) {
+                    return $model->body;
+                })
+                   ,
+        Sight::make('category_id'),    //TODO dodaj relacije i zamjeni ovo polje sa modelom Category   
+        Sight::make('category_id', 'Rubrika')
+                   ->render(function ($model) {
+                    return $model->category()->get()->first()->type;
+                }),
     ];
     }
 

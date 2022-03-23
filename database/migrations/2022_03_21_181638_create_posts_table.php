@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('category_id', autoIncrement: false, unsigned: true);  //int(20),AI=0,UN=1
             $table->text('title');
+            $table->text('body');
             $table->timestamps();
         });
     }

@@ -7,11 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
+use App\Models\Post;
 
 class Category extends Model
 {
     use HasFactory;
     use AsSource, Filterable, Attachable;
+    
+   // protected $table='categories';
     
     protected $fillable=['type',  'created_at','updated_at'];
      
@@ -26,4 +29,9 @@ class Category extends Model
         'updated_at',
         'created_at',
     ];
+    
+    public function posts()
+    {
+        return $this->hasMany(Post::class);  //category_id bi trebao automatski prepoznati
+    }
 }

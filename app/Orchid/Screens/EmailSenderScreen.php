@@ -76,8 +76,8 @@ class EmailSenderScreen extends Screen
                 //value="March Campaign News"
                 ->help('Enter the subject line for your message'),
 
-           // Relation::make('users')   // radi i ovako, cemu tockica????
-            Relation::make('users.')
+           // Relation::make('users')   // bez točkice element ocekuje jednu vrijednost
+            Relation::make('users.')    // s točkicom ovaj element očekuje array (kolekciju)
                 ->title('Recipients')
                 ->multiple()
                 ->required()
